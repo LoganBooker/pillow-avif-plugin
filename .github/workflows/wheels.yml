@@ -160,22 +160,13 @@ jobs:
         coverage xml
       shell: pwsh
 
-    - name: Upload coverage
-      uses: codecov/codecov-action@v3
-      with:
-        file: ./coverage.xml
-        flags: GHA_Windows
-        name: ${{ runner.os }} Python ${{ matrix.python-version }} ${{ matrix.architecture }}
-
     - name: Build wheel
       id: wheel
-      if: "github.event_name == 'push'"
       run: |
         cmd /c "winbuild\build\build_env.cmd && $env:pythonLocation\python.exe -m pip wheel -v ."
       shell: pwsh
 
     - uses: actions/upload-artifact@v3
-      if: "github.event_name == 'push'"
       with:
         name: wheels
         path: "*.whl"
