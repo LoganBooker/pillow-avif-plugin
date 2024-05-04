@@ -67,6 +67,10 @@ if $PKGCONFIG --exists aom; then
     HAS_DECODER=1
 fi
 
+if $PKGCONFIG --exists libjxl; then
+    LIBAVIF_CMAKE_FLAGS+=(-DCONFIG_TUNE_BUTTERAUGLI=ON)
+fi
+
 if [ "$HAS_ENCODER" != 1 ] || [ "$HAS_DECODER" != 1 ]; then
     if [ -n "${HAS_EXT_DIR}" ]; then
         echo "::group::Building aom"
