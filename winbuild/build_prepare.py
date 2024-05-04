@@ -178,20 +178,6 @@ DEPS = {
         "bins": [r"bin\*.dll"],
         "libs": [r"lib\*.*"],
     },
-    "libjxl": {
-        "url": (
-            "https://github.com/libjxl/libjxl/releases/download/v0.10.2/"
-            "jxl-x64-windows-static.zip"
-        ),
-        "filename": "jxl-x64-windows-static.zip",
-        "dir": "",
-        "license": "LICENSE.libjxl",
-        "build": [
-            cmd_copy("jxl.lib", "libjxl.lib"),
-        ],
-        "bins": [r"*.dll"],
-        "libs": [r"*.lib"],
-    },
     "libavif": {
         "url": (
             "https://github.com/fdintino/libavif/archive/"
@@ -213,7 +199,6 @@ DEPS = {
                     "-DCMAKE_CXX_COMPILER=cl.exe",  # for Ninja
                     "-DCMAKE_C_FLAGS=-nologo",
                     "-DCMAKE_CXX_FLAGS=-nologo",
-                    "-DCONFIG_TUNE_BUTTERAUGLI=ON",
                     "-DBUILD_SHARED_LIBS=OFF",
                     "-DAVIF_CODEC_AOM=ON",
                     "-DAVIF_LOCAL_AOM=ON",
