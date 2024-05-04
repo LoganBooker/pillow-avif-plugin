@@ -617,7 +617,8 @@ _encoder_add(AvifEncoderObject *self, PyObject *args) {
 
     avifRGBImageSetDefaults(&rgb, frame);
     rgb.depth = 8;
-
+    rgb.chromaDownsampling = 4; // AVIF_CHROMA_DOWNSAMPLING_SHARP_YUV
+    
     if (strcmp(mode, "RGBA") == 0) {
         rgb.format = AVIF_RGB_FORMAT_RGBA;
         channels = 4;
