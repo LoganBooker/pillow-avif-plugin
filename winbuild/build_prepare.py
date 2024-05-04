@@ -184,7 +184,7 @@ DEPS = {
             "jxl-x64-windows-static.zip"
         ),
         "filename": "jxl-x64-windows-static.zip",
-        "dir": "jxl-x64-windows-static",
+        "dir": "",
         "license": "LICENSE.libjxl",
         "build": [
             cmd_copy("jxl.lib", "libjxl.lib"),
