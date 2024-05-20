@@ -466,6 +466,7 @@ AvifEncoderNew(PyObject *self_, PyObject *args) {
 #endif
         encoder->codecChoice = enc_options.codec;
         encoder->speed = enc_options.speed;
+        encoder->maxThreads = 8; // HACK
         encoder->timescale = (uint64_t)1000;
         encoder->tileRowsLog2 = enc_options.tile_rows_log2;
         encoder->tileColsLog2 = enc_options.tile_cols_log2;
